@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--跟标签beans，里面配置一个又一个的bean子标签，每一个bean子标签都代表一个类的配置-->
+<beans>
+    <!--id标识对象，class是类的全限定类名-->
+    <bean id="student" class="com.szp.geektime.javaclass.week05.myspring.pojo.Student">
+        <property name="name" value="zhangsan"/>
+        <property name="id" value="123"/>
+    </bean>
+    <bean id="teacher" class="com.szp.geektime.javaclass.week05.myspring.pojo.Teacher">
+        <!--set+ name 之后锁定到传值的set方法了，通过反射技术可以调用该方法传入对应的值-->
+        <property name="name" value="luoyonghao"></property>
+        <property name="student" ref="student"></property>
+    </bean>
+</beans>
